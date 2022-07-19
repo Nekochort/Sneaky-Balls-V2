@@ -17,15 +17,16 @@ public class CameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        angle -= cameraJoystick.Direction.y * sensitivity * Time.deltaTime;
-        angle = Mathf.Clamp(angle,-15,75);
+        angle -= cameraJoystick.Direction.y * sensitivity * Time.fixedDeltaTime;
+        angle = Mathf.Clamp(angle, -15, 75);
 
         target.transform.eulerAngles = new Vector3(
-            angle, target.transform.eulerAngles.y + cameraJoystick.Direction.x * sensitivity * Time.deltaTime);
-        
+            angle, target.transform.eulerAngles.y + cameraJoystick.Direction.x * sensitivity * Time.fixedDeltaTime);
+
         Vector3 positionToGo = (target.position - target.forward * distance) + Vector3.up * height;
         Vector3 smoothPosition = Vector3.Lerp(transform.position, positionToGo, moveSpeed);
         transform.position = smoothPosition;
+
         transform.LookAt(target.position + Vector3.up * (height * 0.8f));
     }
 }

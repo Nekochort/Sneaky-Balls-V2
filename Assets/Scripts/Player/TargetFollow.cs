@@ -3,7 +3,7 @@ using UnityEngine;
 public class TargetFollow : MonoBehaviour
 {
     [SerializeField] Transform followObject;
-    void Update()
+    void FixedUpdate()
     {
         transform.position = followObject.position;
     }

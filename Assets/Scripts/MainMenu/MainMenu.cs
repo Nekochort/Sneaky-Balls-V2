@@ -25,5 +25,9 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel("Game");
     }
-
+    
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

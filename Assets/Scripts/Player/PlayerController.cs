@@ -32,13 +32,13 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector2 verticalInput = joystick.Direction;
 
         Vector3 movementInput = Quaternion.Euler(0, followCamera.transform.eulerAngles.y, 0) * new Vector3(verticalInput.x, 0, verticalInput.y);
         Vector3 movementDirection = movementInput * moveSpeed * 100;
 
-        rigidbody.AddForce(movementDirection * Time.deltaTime);
+        rigidbody.AddForce(movementDirection * Time.fixedDeltaTime);
     }
 }
