@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
         if (!view.IsMine)
         {
             followCamera.gameObject.SetActive(false);
-            //Destroy(followCamera.gameObject);
-            //Destroy(followTarget.gameObject);
             scriptPlayerController.enabled = false;
         }
 
