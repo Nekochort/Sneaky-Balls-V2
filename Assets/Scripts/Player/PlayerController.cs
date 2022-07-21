@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     PhotonView view;
 
     public PlayerController scriptPlayerController;
-    public GameObject Camera;
     public Text NickText;
 
     private void Awake()
@@ -25,7 +24,9 @@ public class PlayerController : MonoBehaviour
 
         if (!view.IsMine)
         {
-            Camera.SetActive(false);
+            followCamera.gameObject.SetActive(false);
+            //Destroy(followCamera.gameObject);
+            //Destroy(followTarget.gameObject);
             scriptPlayerController.enabled = false;
         }
 
