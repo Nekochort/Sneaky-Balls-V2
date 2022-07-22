@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     PhotonView view;
 
     public PlayerController scriptPlayerController;
-    public Text NickText;
+    public TextMesh NickText;
 
     private void Awake()
     {
