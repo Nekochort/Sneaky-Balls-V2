@@ -6074,10 +6074,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CameraController_FixedUpdate_m761C4930B5
 		float L_5;
 		L_5 = Time_get_fixedDeltaTime_mD7107AF06157FC18A50E14E0755CEE137E9A4088(NULL);
 		__this->___angle_10 = ((float)il2cpp_codegen_subtract(L_0, ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_3, L_4)), L_5))));
-		// angle = Mathf.Clamp(angle, -15, 30);
+		// angle = Mathf.Clamp(angle, -15, 15);
 		float L_6 = __this->___angle_10;
 		float L_7;
-		L_7 = Mathf_Clamp_m154E404AF275A3B2EC99ECAA3879B4CB9F0606DC_inline(L_6, (-15.0f), (30.0f), NULL);
+		L_7 = Mathf_Clamp_m154E404AF275A3B2EC99ECAA3879B4CB9F0606DC_inline(L_6, (-15.0f), (15.0f), NULL);
 		__this->___angle_10 = L_7;
 		// target.transform.eulerAngles = new Vector3(
 		// angle, target.transform.eulerAngles.y + camJoystick.Direction.x * sensitivity * Time.fixedDeltaTime);
