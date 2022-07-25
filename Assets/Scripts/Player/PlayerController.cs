@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera followCamera;
     [SerializeField] private Transform followTarget;
     [SerializeField] FloatingJoystick joystick;
-    public string[] winnersNicknames;
 
     private new Rigidbody rigidbody;
 
