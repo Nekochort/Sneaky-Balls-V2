@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 797644687799977726}
   m_Layer: 0
   m_Name: WinPlatform
-  m_TagString: Untagged
+  m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,9 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69340a31549e49e429e05c7c78e9102f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 2339092880029023347, guid: b4ece0360406d954e8c36f4c80d145cf, type: 3}
-  - {fileID: 5134455050976254835}
+  nextLevel: {fileID: 5134455050976254835, guid: 11e2bdafa19b9b04c8b6908e04243379, type: 3}
   sceneObject: {fileID: 0}
   spawns:
   - {fileID: 8240235274720836207, guid: e0a1a5e752960474b8b85ca562a847fa, type: 3}

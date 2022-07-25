@@ -383,9 +383,21 @@ PrefabInstance:
       value: 90.355
       objectReference: {fileID: 0}
     - target: {fileID: 6026110357563663918, guid: b4ece0360406d954e8c36f4c80d145cf, type: 3}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 5134455050976254835, guid: 85d5c18e172ae5948994e32a7d37ea85, type: 3}
+    - target: {fileID: 6026110357563663918, guid: b4ece0360406d954e8c36f4c80d145cf, type: 3}
+      propertyPath: levels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026110357563663918, guid: b4ece0360406d954e8c36f4c80d145cf, type: 3}
       propertyPath: spawns.Array.size
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6026110357563663918, guid: b4ece0360406d954e8c36f4c80d145cf, type: 3}
+      propertyPath: levels.Array.data[2]
+      value: 
+      objectReference: {fileID: 5134455050976254835, guid: 11e2bdafa19b9b04c8b6908e04243379, type: 3}
     - target: {fileID: 6026110357563663918, guid: b4ece0360406d954e8c36f4c80d145cf, type: 3}
       propertyPath: spawns.Array.data[0]
       value: 

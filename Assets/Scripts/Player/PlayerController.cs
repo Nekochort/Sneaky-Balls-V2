@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera followCamera;
     [SerializeField] private Transform followTarget;
     [SerializeField] FloatingJoystick joystick;
+    public string[] winnersNicknames;
 
     private new Rigidbody rigidbody;
 
@@ -39,5 +40,13 @@ public class PlayerController : MonoBehaviour
         Vector3 movementDirection = movementInput * moveSpeed * 100;
 
         rigidbody.AddForce(movementDirection * Time.fixedDeltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Win")
+        {
+            Debug.Log(NickText.text);
+        }
     }
 }
