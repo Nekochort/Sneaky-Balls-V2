@@ -14,8 +14,7 @@ public class PlayerController : MonoBehaviour
     PhotonView view;
 
     public PlayerController scriptPlayerController;
-    public GameObject Camera;
-    public Text NickText;
+    public TextMesh NickText;
 
     private void Awake()
     {
@@ -25,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
         if (!view.IsMine)
         {
-            Camera.SetActive(false);
+            followCamera.gameObject.SetActive(false);
             scriptPlayerController.enabled = false;
         }
 
@@ -40,5 +39,13 @@ public class PlayerController : MonoBehaviour
         Vector3 movementDirection = movementInput * moveSpeed * 100;
 
         rigidbody.AddForce(movementDirection * Time.fixedDeltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Win")
+        {
+            Debug.Log(NickText.text);
+        }
     }
 }

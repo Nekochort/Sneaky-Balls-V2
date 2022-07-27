@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -6,10 +7,10 @@ public class CameraController : MonoBehaviour
     [SerializeField][Range(1f, 5f)] private float distance = 3f;
     [SerializeField][Range(0.5f, 5f)] private float height = 0.7f;
     [SerializeField][Range(0f, 1f)] private float moveSpeed = 0.125f;
-    [SerializeField][Range(0f, 100f)] private float sensitivity = 100f;
-    [SerializeField] FloatingJoystick cameraJoystick;
-
+    [SerializeField][Range(0f, 350f)] private float sensitivity = 500f;
+    [SerializeField] FloatingJoystick camJoystick;
     private float angle = 0;
+
     private void Start()
     {
         target.transform.rotation = transform.rotation;
@@ -17,11 +18,10 @@ public class CameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        angle -= cameraJoystick.Direction.y * sensitivity * Time.fixedDeltaTime;
-        angle = Mathf.Clamp(angle, -15, 75);
-
+        angle -= camJoystick.Direction.y * sensitivity * Time.fixedDeltaTime;
+        angle = Mathf.Clamp(angle, -15, 15);
         target.transform.eulerAngles = new Vector3(
-            angle, target.transform.eulerAngles.y + cameraJoystick.Direction.x * sensitivity * Time.fixedDeltaTime);
+        angle, target.transform.eulerAngles.y + camJoystick.Direction.x * sensitivity * Time.fixedDeltaTime);
 
         Vector3 positionToGo = (target.position - target.forward * distance) + Vector3.up * height;
         Vector3 smoothPosition = Vector3.Lerp(transform.position, positionToGo, moveSpeed);
